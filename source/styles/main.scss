@@ -1,0 +1,196 @@
+nav ul li {
+  list-style-type: none;
+  padding: 0 30px;
+  line-height: 3px;
+}
+.navButton{
+  margin: 1%;  
+}
+#sticky {
+  // to make sure it goes in front of others
+  z-index: 5;
+  display: flex;
+  opacity: .8;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size:18px;
+  position: fixed;
+  background-color: #4717F6;
+  color:#E7DFDD;
+  // smooth changing of sizes
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+#filler1 {
+  height: 200px;
+  width: 20px;
+  background-color: white;
+}
+#filler2 {
+  height: 200px;
+  width: 20px;
+  background-color: red;
+}
+#about ,#works, #contact{
+  color:#E7DFDD;
+  border-radius: 20px;
+  padding: 10px;
+  text-decoration:none;
+}
+
+/*
+#sticky {
+  width: 100%;
+  position: fixed;
+  background-color: #336B87;
+  color:#2A3132;
+}
+*/
+body {
+  background-color:#E7DFDD;
+  background-image: url('http://housing.illinois.edu/-/media/housing/images/photo-galleries/isr/isr-exterior-2.ashx');
+      background-repeat: no-repeat;
+    background-attachment: fixed;
+  background-position:30%;
+}
+#topPadding{
+  height: 250px;
+  padding-top: 30%;
+  text-align: center;
+  color: white;
+  font-size: 300%;
+     -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color:  blue;
+}
+@mixin sectionSetup($color) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 700px;
+  background-color: $color;
+}
+#section1 {
+  @include sectionSetup(lightblue);
+  
+}
+//CSS3animation
+/* The animation code */
+@keyframes sliding {
+    from {background-color: #E9FFFF;}
+    to {background-color: purple;}
+}
+
+
+#section2 {
+  
+  @include sectionSetup(#E9FFFF);
+  
+}
+#section3 {
+  
+  @include sectionSetup(lightblue);
+}
+
+#section4{
+  
+  @include sectionSetup(#E9FFFF);
+  animation-name: sliding;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.carouselButton{
+  max-height: 15%;
+  max-width: 15%;
+  margin: 0 10px 0 10px;
+}
+// inspiration from
+//https://www.sitepoint.com/make-a-simple-javascript-slideshow-without-jquery/
+.slide{    
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.showing{
+  opacity: 1;
+  z-index: 1;
+}
+#slides {
+    position: relative;
+    height: 500px;
+    width: 500px;
+    list-style-type: none;
+    background-color: none;
+}
+
+img{
+  max-height:95%;
+  max-width: 100%;
+  height:100%;
+}
+
+// snippet from
+// https://www.w3schools.com/howto/howto_css_modals.asp
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 7; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+//end modal snippet
+
+.modalImage {
+  max-height: 30%;
+  max-width: 30%;
+}
+
+
+.columnBox{
+  text-align: center;
+  background-color:gray;
+  height: 50%;
+  width: 50%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.columnBoxTwo{
+  font-size: 200%;
+  text-align: center;
+  background-color:none;
+  height: 25%;
+  width: 25%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#learnMoreBox{
+  background-color: purple;
+  height:5%;
+  width:12.5%;
+  text-align: center;
+  padding: 20%;
+  
+  
+}
