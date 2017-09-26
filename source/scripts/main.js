@@ -1,3 +1,8 @@
+
+
+"use strict";
+
+window.onload = function(){
 //Navbar Resize start
 let startY = window.scrollY;
 
@@ -17,12 +22,12 @@ navbarResize();
 
 //Positional Highlighting start
 function getY(elm){
-  id = document.getElementById(elm);
+  let id = document.getElementById(elm);
   // bounding Client is top of element to top of view point, positive
   // means top of screen hasn't hit object
   let object = id.getBoundingClientRect();
   return object.top;
-}/*
+};/*
 let posSOne = getY('section1');
 let posSTwo = getY('section2');
 let posSThr = getY('section3');
@@ -67,18 +72,17 @@ function scrollTo(element, to, duration) {
     }, 10);
 }
 function addSmoothScroll(elmnt, target){
-button = document.getElementById(elmnt);
+let button = document.getElementById(elmnt);
+//Smooth Scroll end
 button.addEventListener('click', function (event) {
-  elmnt = document.getElementById(target);
+  let elmnt = document.getElementById(target);
   scrollTo(document.body, elmnt.offsetTop, 600);
   // so it doesn't go jump to the element
-  event.preventDefault();
 }, false);
 }
 addSmoothScroll('about','section1');
 addSmoothScroll('works','section2');
 addSmoothScroll('contact','section3');
-//Smooth Scroll end
 
 //Carousel start
 //carousel snippet, idea from:
@@ -97,24 +101,25 @@ function nextSlide(direction) {
 }
 //Carousel start
 
-document.getElementById('leftButton').onclick = function(){
+var leftButton = document.getElementById('leftButton');
+leftButton.addEventListener('click', function(event){
   nextSlide((-1));
-};
-document.getElementById('rightButton').onclick = function(){
-  nextSlide(1);
-};
+},false);
+document.getElementById('rightButton').addEventListener('click', function(event){
+  nextSlide((1));
+},false);
 //Carousel end
 //Modal start
 let modalButtonOne = document.getElementById('startModal');
 let modalButtonTwo = document.getElementById('startModalTwo');
 let modal = document.getElementById('corn');
 let modalTwo = document.getElementById('moreCorn');
-modalButtonOne.onclick = function(){
+modalButtonOne.addEventListener('click',function(){
  modal.style.display ='block';
-};
-modalButtonTwo.onclick = function(){
+}, false);
+modalButtonTwo.addEventListener('click', function(){
  modalTwo.style.display ='block';
-};
+}, false);
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
@@ -124,3 +129,4 @@ window.onclick = function(event) {
     }
 };
 //Modal end
+};
