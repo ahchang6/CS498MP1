@@ -1,8 +1,6 @@
 
-
 "use strict";
-
-window.onload = function(){
+document.addEventListener("DOMContentLoaded", function(event) {
 //Navbar Resize start
 let startY = window.scrollY;
 
@@ -129,4 +127,4 @@ window.onclick = function(event) {
     }
 };
 //Modal end
-};
+});
